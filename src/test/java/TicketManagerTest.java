@@ -43,6 +43,21 @@ public class TicketManagerTest {
     }
 
     @Test
+    public void ticketHaveNotOne() {
+
+        manager.add(product1);
+        manager.add(product2);
+        manager.add(product3);
+        manager.add(product4);
+        manager.add(product5);
+
+        Ticket[] expected = { };
+        Ticket[] actual = manager.searchBy("LED", "MOW");
+
+        Assertions.assertArrayEquals(expected, actual);
+    }
+
+    @Test
     public void ticketHaveNothing() {
 
         manager.add(product1);
